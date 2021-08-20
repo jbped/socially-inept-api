@@ -1,0 +1,25 @@
+{
+  "name": "socially-inept-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbped/socially-inept-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbped/socially-inept-api/issues"
+  },
+  "homepage": "https://github.com/jbped/socially-inept-api#readme",
+  "dependencies": {
+    "jest": "^27.0.6",
+    "mongoose": "^5.13.7"
+  }
+}
