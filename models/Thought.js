@@ -2,10 +2,23 @@ const { Schema, model, Types } = require("mongoose");
 
 const reactionSchema = new Schema(
     {
-        reactionId: {},
-        reactionBody: {},
-        username: {},
-        createdAt: {}
+        reactionId: {
+            type: Schema.Types.ObjectId,
+            default: new Types.ObjectId()
+        },
+        reactionBody: {
+            type: String,
+            required: "Please provide some text for the body of your Reaction.",
+            max: [280, "A maximum of 280 characters are allowed"]
+        },
+        username: {
+            type: String, 
+            required: "Please provide a username"
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        }
     },
     {
         toJson: {
@@ -18,7 +31,7 @@ const thoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
-            required: "Please provide a sacrificial body for your thought -- I mean a body of text.",
+            required: "Please provide a sacrificial body for your thought -- er, um, I uh... I mean a body of text.",
             min: [1, "A minimum of one character is required"],
             max: [280, "A maximum of 280 characters are allowed"]
         },
