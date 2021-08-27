@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.require("./routes");
+app.use(require("./routes"));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socially-inept', {
     useNewUrlParser: true, 
@@ -17,4 +17,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socially-inept'
 
 mongoose.set("debug", true);
 
-app.listen(PORT, () => console.log(`Connected and listening! (http://localhost:${POST}`));
+app.listen(PORT, () => console.log(`Connected and listening! (http://localhost:${PORT})nopd`));
