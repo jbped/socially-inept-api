@@ -4,16 +4,28 @@ const userController = {
     // GET ALL USERS
     getUsers(req, res) {
         User.find({})
-            .populate("thoughts")
-            .populate("friends")
+            .populate({
+                path: "thoughts",
+                select: "-__v -username -userId -id"
+            })
+            // .populate({
+            //     path: "friends",
+            //     select: "_id username"
+            // })
             .then(dbData => res.json(dbData))
             .catch(err => res.json(err))
     },
     // GET ONE USER BY USER ID
     getOneUser({ params }, res) {
         User.findById(params.id)
-            .populate("thoughts")
-            .populate("friends")
+            .populate({
+                path: "thoughts",
+                select: "-__v -username -userId -id"
+            })
+            // .populate({
+            //     path: "friends",
+            //     select: "_id username"
+            // })
             .then(dbData => {
                 if(!dbData) {
                     res.status(400).json({ message: "No users found with provided ID" })
@@ -59,6 +71,7 @@ const userController = {
                     res.status(400).json({ message: "No users found with provided ID" })
                     return;
                 }
+                
                 res.json(dbData);
             })
             .catch(err => res.json(err))

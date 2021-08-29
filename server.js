@@ -11,10 +11,12 @@ app.use(express.static('public'));
 app.use(require("./routes"));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socially-inept', {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 mongoose.set("debug", true);
 
-app.listen(PORT, () => console.log(`Connected and listening! (http://localhost:${PORT})nopd`));
+app.listen(PORT, () => console.log(`Connected and listening! (http://localhost:${PORT})`));

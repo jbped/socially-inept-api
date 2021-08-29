@@ -16,6 +16,10 @@ const reactionSchema = new Schema(
             type: String, 
             required: "Please provide a username"
         },
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -45,6 +49,10 @@ const thoughtSchema = new Schema(
         username: {
             type: String,
             required: "Please provide a username"
+        },
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
         },
         reactions: [reactionSchema]
     },
