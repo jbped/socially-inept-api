@@ -46,7 +46,7 @@ Note that each of these routes are the subdirectory following your the domain th
 ```
 {
   "username": "newUser",
-	"email": "test@email.com"
+  "email": "test@email.com"
 }
 ```
 #### Update User by ID
@@ -56,7 +56,7 @@ Note that each of these routes are the subdirectory following your the domain th
 ```
 {
   "username": "editedUsername",
-	"email": "edited@email.com"
+  "email": "edited@email.com"
 }
 ```
 #### Delete User By ID
@@ -107,7 +107,7 @@ Note that each of these routes are the subdirectory following your the domain th
 * __JSON:__ 
 ```
 {
-   "thoughtText": "{Edited thoughtText}"
+  "thoughtText": "{Edited thoughtText}"
 }
 ```
 #### Delete Thought By ID
@@ -123,9 +123,9 @@ Note that each of these routes are the subdirectory following your the domain th
 * __JSON:__ 
 ```
 {
-	"reactionBody": "{reaction text goes here}",
-	"username": "{username of the reaction author}",
-	"userId": "{_id of the User that matches the username}"
+  "reactionBody": "{reaction text goes here}",
+  "username": "{username of the reaction author}",
+  "userId": "{_id of the User that matches the username}"
 }
 ```
 
